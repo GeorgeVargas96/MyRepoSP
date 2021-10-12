@@ -1,15 +1,12 @@
-package lab2;
+package lab3;
 
-import lab2.Author;
-import lab2.Chapter;
-import lab3.Paragraph;
 
 import java.util.ArrayList;
 
 public class Book {
     private String title;
     private ArrayList<Author> authors;
-    private ArrayList<Chapter> chapters= new ArrayList<>();
+    private ArrayList<Element> content= new ArrayList<>();
     public Book(String name) {
         this.title = name;
     }
@@ -20,7 +17,7 @@ public class Book {
         System.out.println(this.title);
         for(Author el:authors)
             el.print();
-        for(Chapter el:chapters)
+        for(Element el:content)
             el.print();
     }
     public void addAuthor(Author a)
@@ -29,15 +26,10 @@ public class Book {
             authors=new ArrayList<>();
         authors.add(a);
     }
-    public int addChapter(String str)
-    {
-        chapters.add(new Chapter(str));
-        return chapters.size()-1;
-    }
-    public Chapter getChapter(int i){
-        return chapters.get(i);
+    public void addContent(Element element){
+        this.content.add(element);
     }
 
-    public void addContent(Paragraph paragraph) {
-    }
+
+
 }
