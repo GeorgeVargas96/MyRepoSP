@@ -38,6 +38,7 @@ public class Image implements Element {
     }
     public void setContent(String type) {
         ImageLoader loader = factory.create(type);
+        this.content=loader.load("text");
     }
 
 }
